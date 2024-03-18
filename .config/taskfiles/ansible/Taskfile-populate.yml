@@ -86,12 +86,17 @@ tasks:
           KEY: google.cloud
           VAL: >-
             {"name": "google.cloud", "source": "https://galaxy.ansible.com"}
+      - task: collection
+        vars:
+          KEY: geerlingguy.mac
+          VAL: >-
+            {"name": "geerlingguy.mac", "source": "https://galaxy.ansible.com"}
       - task: dependency
         vars:
           KEY: community.general.homebrew
-          ROLE: professormanhattan.homebrew
+          ROLE: geerlingguy.mac.homebrew
           VAL: >-
-            {"role": "professormanhattan.homebrew", "when": "ansible_os_family == 'Darwin'"}
+            {"role": "geerlingguy.mac.homebrew", "when": "ansible_os_family == 'Darwin'"}
       - task: dependency
         vars:
           KEY: community.general.npm
